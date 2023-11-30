@@ -10,7 +10,7 @@ Rectangle {
         anchors.fill: parent
         visible: appParams.mode2
     }
-    PlayMode{
+    MapMode{
         anchors.fill: parent
         visible: appParams.mode3
     }

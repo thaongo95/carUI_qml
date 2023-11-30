@@ -4,7 +4,7 @@ Rectangle {
     color: "transparent"
     Text {
         anchors.centerIn: parent
-        text: qsTr("PLAY")
+        text: qsTr("MAP")
         font.pixelSize: 36
         color: "white"
 

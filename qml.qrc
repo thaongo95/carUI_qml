@@ -47,5 +47,14 @@
         <file>ui/assets/cars/car-9315.png</file>
         <file>ui/assets/cars/mercedes-26183.png</file>
         <file>ui/assets/fast-forward.png</file>
+        <file>ui/assets/music.png</file>
+        <file>ui/assets/forward-button.png</file>
+        <file>ui/assets/menu.png</file>
+        <file>ui/assets/pause.png</file>
+        <file>ui/assets/play-button.png</file>
+        <file>ui/assets/repeat.png</file>
+        <file>ui/assets/repeatone.png</file>
+        <file>ui/assets/shuffle.png</file>
+        <file>ui/assets/shuffle(1).png</file>
     </qresource>
 </RCC>
