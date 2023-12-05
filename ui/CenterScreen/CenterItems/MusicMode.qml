@@ -145,6 +145,7 @@ Rectangle {
                 if (processArea.startTime===processArea.endTime){
                     timer.stop()
                     processArea.startTime=0
+                    music.playFlag = false
                 }
 
             }

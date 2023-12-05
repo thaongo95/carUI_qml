@@ -12,73 +12,110 @@ Rectangle {
                                     "qrc:/ui/assets/cars/car-9315.png",
                                     "qrc:/ui/assets/cars/mercedes-26183.png"
     ]
-    property variant textSources:[
-"The RS Q8 is a performance version of the Q8 and was unveiled at the 2019 LA Auto Show in November.
-The engine is shared with the RS 6 C8 and RS 7 4K8, a 4.0 TFSI engine rated 600 PS (441 kW; 592 hp)
-and 800 N⋅m (590.0 lb⋅ft) of torque. Like the SQ8, performance is sent through the 8-speed Tiptronic
-automatic gearbox (ZF 8HP90) to its Quattro all-wheel drive system. Audi claims 0–100 km/h (0–62 mph)
- in 3.8 seconds. The top speed is electronically limited to 250 km/h (155.3 mph) (305 km/h (189.5 mph)
- with dynamic package).",
-"Standard luxuries include heated power front seats, dual digital displays, 64-color ambient lighting,
-wireless charging, Blind Spot Assist and PRE-SAFE®. 2.0L inline-4 turbo engine with mild hybrid drive
-Hybrid Integrated Starter-Generator 9G-TRONIC automatic transmission 4MATIC all-wheel drive 4-wheel
-Electronic Traction System (4-ETS)",
-"The Aventador was launched on 28 February 2011, at the Geneva Motor Show.Five months after its initial
- unveiling in Sant'Agata Bolognese, the vehicle,internally codenamed LB834, was designed to replace the
- then-decade-old Murciélago as the new flagship model.Soon after the Aventador's unveiling, Lamborghini
-announced that it had sold 12 cars, with deliveries starting in the second half of 2011.By March 2016,
-Lamborghini had built 5,000 Aventadors. It was the second best selling Lamborghini model alongside the
-Gallardo and later the Huracan.",
-"The Porsche 911 (pronounced Nine Eleven or in German: Neunelf) is a two-door 2+2 high performance rear
--engined sports car introduced in September 1964 by Porsche AG of Stuttgart, Germany. It has a rear
--mounted flat-six engine and originally a torsion bar suspension. The car has been continuously enhanced
-through the years but the basic concept has remained unchanged.[1] The engines were air-cooled until the
-introduction of the 996 series in 1998.",
-"The Dodge Charger is a model of automobile marketed by Dodge in various forms over seven generations
-since 1966. The first Charger was a show car in 1964. A 1965 Charger II concept car resembled the 1966
-production version. The Charger has been built on three different platforms in various sizes. In the
-United States, the Charger nameplate has been used on intermediate sized pony cars, muscle cars, and
-personal luxury coupes, as well as on subcompact hatchbacks; and the current Charger is a full-size
-four-door sedan. ",
-"The RS Q8 is a performance version of the Q8 and was unveiled at the 2019 LA Auto Show in November.
-The engine is shared with the RS 6 C8 and RS 74K8, a 4.0 TFSI engine rated 600 PS (441 kW; 592 hp)
-and 800 N⋅m (590.0lb⋅ft) of torque. Like the SQ8, performance is sent through the 8-speed Tiptronic
-automatic gearbox (ZF 8HP90) to its Quattro all-wheel drive system. Audi claims 0–100 km/h (0–62 mph)
- in 3.8 seconds. The top speed is electronically limited to 250 km/h (155.3 mph) (305 km/h (189.5 mph)
- with dynamic package).",
-"The 2024 Audi RS5 is the max-performance version of Audi's stylish, luxury coupe, more muscular and
-aggressive than its S5 and A5 siblings. Its specs fall short of the rival BMW M4 coupe's, but the RS5
-still delivers an exciting driving experience with blistering acceleration, formidable handling, and
-strong braking. At the same time, it's not too hardcore for daily driving. The nicely appointed interior
- has several sporty touches, and the rear seat is actually usable, despite the two-door configuration.
-The RS5 is also available as a four-door Sportback",
-"C 300 Sedan Specifications: heated power front seats, dual digital displays,64-color ambient lighting,
-wireless charging, Blind Spot Assist and PRE-SAFE®.2.0L inline-4 turbo engine with mild hybrid drive
-Hybrid Integrated Starter-Generator 9G-TRONIC automatic transmission 4MATIC all-wheel drive 4-wheel
-Electronic Traction System (4-ETS)"
-
-    ]
     property int index: 0
+    property variant distanceRange:["433-473", "334-355", "380-430", "400-450", "430-460", "425-475", "357-450", "450-480"]
+    property variant speedUpTime: [8.9, 7.8, 7.9, 6.7, 7.6, 7.4, 8.7, 9.3]
+    property variant chargingTime: [6.7, 5.6, 5.8, 6.5, 6.3, 7.4, 8.2, 4.5]
+    property variant spaceNum: [5, 5, 2, 2, 5, 5, 2, 2]
+    property variant nameCar: ["Audi Q8", "Mercedes-Benz GLC300", "Lamboghini Aventador", "Mustang F-Type", "Dodge LS", "Audi Q7", "Audi RS-200", "Mercedes c300"]
+    property color textColor: Qt.lighter(appParams.app_Color, 2.0)
     Rectangle{
         color: "transparent"
         anchors{
             top: parent.top
             horizontalCenter: parent.horizontalCenter
             topMargin: parent.height/8
-
         }
         height: parent.height/3
-        width: parent.width/2
-        Text{
-            text: textSources[index]
-            anchors.centerIn: parent
-            font.pixelSize: 12
-            color: "white"
+        width: parent.width-parent.width/10
+        Row{
+            anchors.fill: parent
+            anchors.bottomMargin: parent.width/6
+            spacing: parent.width/8
 
+            Column{
+                spacing: 10
+                Text{
+                    text: "Tầm vận hành"
+                    font.pixelSize: 14
+                    color: textColor
+                }
+                Text{
+                    text: distanceRange[index] + " km"
+                    font.pixelSize: 24
+                    color: textColor
+                }
+                Text{
+                    text: "Quãng đường chạy hoàn toàn bằng điện"
+                    font.pixelSize: 12
+                    color: textColor
+                }
+            }
+            Column{
+                spacing: 10
+                Text{
+                    text: "Tăng tốc trong"
+                    font.pixelSize: 14
+                    color: textColor
+                }
+                Text{
+                    text: speedUpTime[index] + " giây"
+                    font.pixelSize: 24
+                    color: textColor
+                }
+                Text{
+                    text: "từ 0 - 100 km/h"
+                    font.pixelSize: 12
+                    color: textColor
+                }
+            }
+            Column{
+                spacing: 10
+                Text{
+                    text: "Thời gian sạc"
+                    font.pixelSize: 14
+                    color: textColor
+                }
+                Text{
+                    text: chargingTime[index] + " giờ"
+                    font.pixelSize: 24
+                    color: textColor
+                }
+                Text{
+                    text: "từ 0% - 100% AC (11kW)"
+                    font.pixelSize: 12
+                    color: textColor
+                }
+            }
+            Column{
+                spacing: 10
+                Text{
+                    text: "Không gian"
+                    font.pixelSize: 14
+                    color: textColor
+                }
+                Text{
+                    text: spaceNum[index] + " chỗ"
+                    font.pixelSize: 24
+                    color: textColor
+                }
+                Text{
+                    text: "Chỗ ngồi"
+                    font.pixelSize: 12
+                    color: textColor
+                }
+            }
+        }
+        Text{
+            anchors{
+                bottom: parent.bottom
+                horizontalCenter: parent.horizontalCenter
+            }
+            text: nameCar[index]
+            font.pixelSize: 28
+            color: Qt.lighter(textColor, 1.5)
         }
     }
-
-
     Image{
         id: carImage
         anchors{
