@@ -1,0 +1,23 @@
+import QtQuick 2.15
+
+Rectangle {
+    color: "transparent"
+    Rectangle{
+        id: colorchooseBt
+        anchors{
+            right: parent.horizontalCenter
+            rightMargin: parent.height/15
+            top: parent.top
+            topMargin: parent.width/10
+        }
+        height: parent.height/20
+        width: parent.width/8
+        color: Qt.darker(appParams.app_Color, 1.5)
+        Text{
+            text: "Chọn màu"
+            anchors.centerIn: parent
+            font.pixelSize: 12
+            color: Qt.lighter(appParams.app_Color, 1.5)
+        }
+    }
+}

@@ -11,6 +11,7 @@ App_Params::App_Params(QObject *parent)
     , m_mode6{false}
     , m_mode7{false}
     , m_imgSource{"qrc:/ui/assets/cars/car-9276.png"}
+    , m_musicTime{195}
 {
 
 }
@@ -130,4 +131,17 @@ void App_Params::setImgSource(const QString &newImgSource)
         return;
     m_imgSource = newImgSource;
     emit imgSourceChanged();
+}
+
+int App_Params::musicTime() const
+{
+    return m_musicTime;
+}
+
+void App_Params::setMusicTime(int newMusicTime)
+{
+    if (m_musicTime == newMusicTime)
+        return;
+    m_musicTime = newMusicTime;
+    emit musicTimeChanged();
 }

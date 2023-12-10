@@ -1,4 +1,5 @@
 import QtQuick 2.15
+import QtQuick.Controls 2.15
 
 Rectangle {
     id: music
@@ -6,6 +7,8 @@ Rectangle {
     property bool playFlag: true
     property variant playMode: ["qrc:/ui/assets/repeatone.png", "qrc:/ui/assets/shuffle(1).png", "qrc:/ui/assets/repeat.png"]
     property int modeIndex: 0
+    property string songName: "Em Là Nhất"
+    property string singerName: "Kis, Hoàng KayLee"
     Image{
         id: musiclabel
         anchors{
@@ -20,7 +23,7 @@ Rectangle {
     }
     Text{
         id: nameSong
-        text: "Name of Song"
+        text: music.songName
         color: Qt.lighter(appParams.app_Color, 1.8)
         anchors{
             horizontalCenter: parent.horizontalCenter
@@ -32,7 +35,7 @@ Rectangle {
     }
     Text{
         id: nameSinger
-        text: "Singer"
+        text: music.singerName
         anchors{
             horizontalCenter: parent.horizontalCenter
             top: nameSong.bottom
@@ -43,7 +46,7 @@ Rectangle {
     Rectangle{
         id: processArea
         property int startTime: 0
-        property int endTime: 195
+        property int endTime: appParams.musicTime
         property real processValue: startTime/endTime
         anchors{
             horizontalCenter: parent.horizontalCenter
@@ -112,6 +115,249 @@ Rectangle {
             width: height
             fillMode: Image.PreserveAspectFit
             source: "qrc:/ui/assets/menu.png"
+            MouseArea{
+                anchors.fill: parent
+                onClicked: {
+                    musicListPopup.open()
+                }
+            }
+
+            Popup{
+                id: musicListPopup
+                x: -music.width/2
+                y: -music.height*4/5
+                width: music.width/2
+                height: music.height*3/4
+                background: Rectangle{
+                    color: Qt.lighter(appParams.app_Color, 1.3)
+                    anchors.fill: parent
+                }
+
+                Rectangle{
+                    id: popupContent
+                    anchors.fill: parent
+                    color: Qt.lighter(appParams.app_Color, 1.3)
+                    ListModel{
+                        id: musicList
+                        ListElement{
+                            musicName: "Anh khạc hay em khạc"
+                            singer:"Khạc Việt"
+                            duringTime: 204
+                        }
+                        ListElement{
+                            musicName: "Có một tình yêu gọi là buông tay"
+                            singer:"A Mộc"
+                            duringTime: 202
+                        }
+                        ListElement{
+                            musicName: "Hoa Cỏ Lau"
+                            singer:"Phong Max"
+                            duringTime: 242
+                        }
+                        ListElement{
+                            musicName: "Cô Nương Của Cậu"
+                            singer:"Lão Phàn Cách Vách"
+                            duringTime: 256
+                        }
+                        ListElement{
+                            musicName: "Tay Trái Chỉ Trăng"
+                            singer:"Tát Đỉnh Đỉnh"
+                            duringTime: 236
+                        }
+                        ListElement{
+                            musicName: "Đường tôi chở em về"
+                            singer:"Bùi Trường Linh"
+                            duringTime: 190
+                        }
+                        ListElement{
+                            musicName: "Bigcityboi"
+                            singer:"Binz, Touliver"
+                            duringTime: 195
+                        }
+                        ListElement{
+                            musicName: "Ngã tư không đèn"
+                            singer:"Trang, Khoa Vũ"
+                            duringTime: 203
+                        }
+                        ListElement{
+                            musicName: "LOSER"
+                            singer:"BIGBANG"
+                            duringTime: 178
+                        }
+                        ListElement{
+                            musicName: "MONSTER"
+                            singer:"BIGBANG"
+                            duringTime: 216
+                        }
+                        ListElement{
+                            musicName: "Sao Cũng Được"
+                            singer:"Thành Đạt"
+                            duringTime: 186
+                        }
+                        ListElement{
+                            musicName: "Khuất Lối"
+                            singer:"H-Kray"
+                            duringTime: 234
+                        }
+                        ListElement{
+                            musicName: "Nơi em muốn tới"
+                            singer:"Hoaprox"
+                            duringTime: 213
+                        }
+                        ListElement{
+                            musicName: "Một Đêm Say"
+                            singer:"Thịnh Suy"
+                            duringTime: 208
+                        }
+                        ListElement{
+                            musicName: "Họ Yêu Ai Mất Rồi"
+                            singer:"BMZ, Doãn Hiếu"
+                            duringTime: 192
+                        }
+                        ListElement{
+                            musicName: "Anh khạc hay em khạc"
+                            singer:"Khạc Việt"
+                            duringTime: 204
+                        }
+                        ListElement{
+                            musicName: "Có một tình yêu gọi là buông tay"
+                            singer:"A Mộc"
+                            duringTime: 202
+                        }
+                        ListElement{
+                            musicName: "Hoa Cỏ Lau"
+                            singer:"Phong Max"
+                            duringTime: 242
+                        }
+                        ListElement{
+                            musicName: "Cô Nương Của Cậu"
+                            singer:"Lão Phàn Cách Vách"
+                            duringTime: 256
+                        }
+                        ListElement{
+                            musicName: "Tay Trái Chỉ Trăng"
+                            singer:"Tát Đỉnh Đỉnh"
+                            duringTime: 236
+                        }
+                        ListElement{
+                            musicName: "Đường tôi chở em về"
+                            singer:"Bùi Trường Linh"
+                            duringTime: 190
+                        }
+                        ListElement{
+                            musicName: "Bigcityboi"
+                            singer:"Binz, Touliver"
+                            duringTime: 195
+                        }
+                        ListElement{
+                            musicName: "Ngã tư không đèn"
+                            singer:"Trang, Khoa Vũ"
+                            duringTime: 203
+                        }
+                        ListElement{
+                            musicName: "LOSER"
+                            singer:"BIGBANG"
+                            duringTime: 178
+                        }
+                        ListElement{
+                            musicName: "MONSTER"
+                            singer:"BIGBANG"
+                            duringTime: 216
+                        }
+                        ListElement{
+                            musicName: "Sao Cũng Được"
+                            singer:"Thành Đạt"
+                            duringTime: 186
+                        }
+                        ListElement{
+                            musicName: "Khuất Lối"
+                            singer:"H-Kray"
+                            duringTime: 234
+                        }
+                        ListElement{
+                            musicName: "Nơi em muốn tới"
+                            singer:"Hoaprox"
+                            duringTime: 213
+                        }
+                        ListElement{
+                            musicName: "Một Đêm Say"
+                            singer:"Thịnh Suy"
+                            duringTime: 208
+                        }
+                        ListElement{
+                            musicName: "Họ Yêu Ai Mất Rồi"
+                            singer:"BMZ, Doãn Hiếu"
+                            duringTime: 192
+                        }
+                    }
+                    Component{
+                        id: musicDelegate
+                        Rectangle{
+                            width: musicListPopup.width
+                            height: musicListPopup.height/10
+                            radius: height/5
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            Rectangle{
+                                anchors{
+                                    left: parent.left
+                                    top: parent.top
+                                    bottom: parent.bottom
+                                }
+                                width: parent.width*5/6
+                                color: Qt.lighter(appParams.app_Color, 1.5)
+                                MouseArea{
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        music.songName = musicName
+                                        music.singerName = singer
+                                        appParams.setMusicTime(duringTime)
+                                    }
+                                }
+
+                                Column{
+                                    anchors.centerIn: parent
+                                    Text{
+                                        text: musicName
+                                        font.pixelSize: 14
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        color: Qt.darker(appParams.app_Color, 1.2)
+                                    }
+                                    Text{
+                                        text: singer
+                                        font.pixelSize: 12
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        color: Qt.darker(appParams.app_Color, 1.2)
+                                    }
+                                }
+                            }
+                            Rectangle{
+                                anchors{
+                                    right: parent.right
+                                    top: parent.top
+                                    bottom: parent.bottom
+                                }
+                                width: parent.width/6
+                                color: Qt.lighter(appParams.app_Color, 1.8)
+                                Text{
+                                    anchors.centerIn: parent
+                                    text: ((duringTime/60<10) ? ("0"+parseInt(duringTime/60)) : parseInt(duringTime/60)) + ":" +
+                                          ((duringTime%60<10) ? ("0"+duringTime%60) : duringTime%60)
+                                    font.pixelSize: 14
+                                    color: Qt.darker(appParams.app_Color, 1.2)
+                                }
+                            }
+                        }
+                    }
+                    ListView{
+                        id: musicListView
+                        model: musicList
+                        delegate: musicDelegate
+                        anchors.fill: parent
+                        focus: true
+                        spacing: 5
+                    }
+                }
+            }
         }
         Image{
             id: modeBt

@@ -15,6 +15,7 @@ class App_Params : public QObject
     Q_PROPERTY(bool mode6 READ mode6 WRITE setMode6 NOTIFY mode6Changed)
     Q_PROPERTY(bool mode7 READ mode7 WRITE setMode7 NOTIFY mode7Changed)
     Q_PROPERTY(QString imgSource READ imgSource WRITE setImgSource NOTIFY imgSourceChanged)
+    Q_PROPERTY(int musicTime READ musicTime WRITE setMusicTime NOTIFY musicTimeChanged)
 public:
     explicit App_Params(QObject *parent = nullptr);
 
@@ -31,6 +32,9 @@ public:
     QString imgSource() const;
 
 
+    int musicTime() const;
+
+
 signals:
     void appColorChanged();
     void mode1Changed();
@@ -43,6 +47,8 @@ signals:
 
     void imgSourceChanged();
 
+    void musicTimeChanged();
+
 public slots:
     void setAppColor(const QString &newApp_Color);
     void setMode1(bool newMode1);
@@ -53,6 +59,7 @@ public slots:
     void setMode6(bool newMode6);
     void setMode7(bool newMode7);
     void setImgSource(const QString &newImgSource);
+    void setMusicTime(int newMusicTime);
 private:
     QString m_app_Color;
     bool m_mode1;
@@ -63,6 +70,7 @@ private:
     bool m_mode6;
     bool m_mode7;
     QString m_imgSource;
+    int m_musicTime;
 };
 
 #endif // APP_PARAMS_H
