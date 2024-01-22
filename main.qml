@@ -5,7 +5,7 @@ import "./ui/CenterScreen"
 
 Window {
     width: 1280
-    height: 720
+    height: 800
     visible: true
     MenuBar{
 

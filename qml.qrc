@@ -33,10 +33,10 @@
         <file>ui/assets/weather/sun.png</file>
         <file>ui/CenterScreen/CenterItems/HomeMode.qml</file>
         <file>ui/CenterScreen/CenterItems/ImageMode.qml</file>
-        <file>ui/CenterScreen/CenterItems/MapMode.qml</file>
+        <file>ui/CenterScreen/CenterItems/GameMode.qml</file>
         <file>ui/CenterScreen/CenterItems/MusicMode.qml</file>
         <file>ui/CenterScreen/CenterItems/VideoMode.qml</file>
-        <file>ui/CenterScreen/CenterItems/CallMode.qml</file>
+        <file>ui/CenterScreen/CenterItems/MapMode.qml</file>
         <file>ui/CenterScreen/CenterItems/SettingMode.qml</file>
         <file>ui/assets/cars/car-9276.png</file>
         <file>ui/assets/cars/car-9292.png</file>
@@ -56,5 +56,83 @@
         <file>ui/assets/repeatone.png</file>
         <file>ui/assets/shuffle.png</file>
         <file>ui/assets/shuffle(1).png</file>
+        <file>ui/assets/games/anaconda.png</file>
+        <file>ui/assets/games/bird.png</file>
+        <file>ui/assets/games/candies.png</file>
+        <file>ui/assets/games/galaxy.png</file>
+        <file>ui/assets/games/handgun.png</file>
+        <file>ui/assets/games/roman-helmet.png</file>
+        <file>ui/assets/games/run.png</file>
+        <file>ui/assets/games/wall.png</file>
+        <file>ui/assets/film.png</file>
+        <file>ui/assets/map.png</file>
+        <file>ui/assets/favorite.png</file>
+        <file>ui/assets/rating.png</file>
+        <file>ui/assets/star.png</file>
+        <file>ui/assets/movies/12 Angry Men H.png</file>
+        <file>ui/assets/movies/12 Angry Men V.png</file>
+        <file>ui/assets/movies/City of God H.png</file>
+        <file>ui/assets/movies/City of God V.png</file>
+        <file>ui/assets/movies/Fight Club H.png</file>
+        <file>ui/assets/movies/Fight Club V.png</file>
+        <file>ui/assets/movies/Forrest Gump H.png</file>
+        <file>ui/assets/movies/Forrest Gump V.png</file>
+        <file>ui/assets/movies/Goodfellas H.png</file>
+        <file>ui/assets/movies/Goodfellas V.png</file>
+        <file>ui/assets/movies/Inception H.png</file>
+        <file>ui/assets/movies/Inception V.png</file>
+        <file>ui/assets/movies/Insterstellar H.png</file>
+        <file>ui/assets/movies/Insterstellar V.png</file>
+        <file>ui/assets/movies/Life Is Beautiful H.png</file>
+        <file>ui/assets/movies/Life Is Beautiful V.png</file>
+        <file>ui/assets/movies/Parasite H.png</file>
+        <file>ui/assets/movies/Parasite V.png</file>
+        <file>ui/assets/movies/Pulp Fiction H.png</file>
+        <file>ui/assets/movies/Pulp Fiction V.png</file>
+        <file>ui/assets/movies/Saving Private Ryan H.png</file>
+        <file>ui/assets/movies/Saving Private Ryan V.png</file>
+        <file>ui/assets/movies/Schindlder's List H.png</file>
+        <file>ui/assets/movies/Schindlder's List V.png</file>
+        <file>ui/assets/movies/Se7en H.png</file>
+        <file>ui/assets/movies/Se7en V.png</file>
+        <file>ui/assets/movies/Spider-Man Across the Spider-Verse H.png</file>
+        <file>ui/assets/movies/Spider-Man Across the Spider-Verse V.png</file>
+        <file>ui/assets/movies/Spirited Away H.png</file>
+        <file>ui/assets/movies/Spirited Away V.png</file>
+        <file>ui/assets/movies/The Dark Night H.png</file>
+        <file>ui/assets/movies/The Dark Night V.png</file>
+        <file>ui/assets/movies/The Godfather H.png</file>
+        <file>ui/assets/movies/The Godfather Part II H.png</file>
+        <file>ui/assets/movies/The Godfather Part II V.png</file>
+        <file>ui/assets/movies/The Godfather V.png</file>
+        <file>ui/assets/movies/The Good, the Bad and the Ugly H.png</file>
+        <file>ui/assets/movies/The Good, the Bad and the Ugly V.png</file>
+        <file>ui/assets/movies/The Lord of the Ring- The Fellowship of the King H.png</file>
+        <file>ui/assets/movies/The Lord of the Ring- The Fellowship of the King V.png</file>
+        <file>ui/assets/movies/The Lord of the Ring- The Return of the King H.png</file>
+        <file>ui/assets/movies/The Lord of the Ring- The Return of the King V.png</file>
+        <file>ui/assets/movies/The Lord of the Rings - The Two Towers H.png</file>
+        <file>ui/assets/movies/The Lord of the Rings - The Two Towers V.png</file>
+        <file>ui/assets/movies/The Matrix H.png</file>
+        <file>ui/assets/movies/The Matrix V.png</file>
+        <file>ui/assets/movies/The Pianist H.png</file>
+        <file>ui/assets/movies/The Pianist V.png</file>
+        <file>ui/assets/movies/The Shawshank Redemption H.png</file>
+        <file>ui/assets/movies/The Shawshank Redemption V.png</file>
+        <file>ui/assets/homePage/ABS.png</file>
+        <file>ui/assets/homePage/ABS-on.png</file>
+        <file>ui/assets/homePage/car-lights.png</file>
+        <file>ui/assets/homePage/gas-station.png</file>
+        <file>ui/assets/homePage/low-beam.png</file>
+        <file>ui/assets/homePage/low-beam-on.png</file>
+        <file>ui/assets/homePage/parking.png</file>
+        <file>ui/assets/homePage/parking-on.png</file>
+        <file>ui/assets/homePage/road.png</file>
+        <file>ui/assets/homePage/seatbelt.png</file>
+        <file>ui/assets/homePage/seatbelt-on.png</file>
+        <file>ui/assets/homePage/speedometer-png.png</file>
+        <file>ui/assets/homePage/stop.png</file>
+        <file>ui/assets/homePage/stop-on.png</file>
+        <file>ui/assets/homePage/White-Car-From_Behind.png</file>
     </qresource>
 </RCC>

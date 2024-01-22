@@ -4,13 +4,6 @@ Item {
     property int marginLarge: parent.height/15
     property int marginMedium: parent.height/30
     property int marginSmall: parent.height/45
-    anchors{
-        top: parent.top
-        bottom: parent.bottom
-        left: parent.left
-        margins: marginMedium
-    }
-
     width: parent.width/15
     ChooseModeButton{
         id: bt1
@@ -83,7 +76,7 @@ Item {
     ChooseModeButton{
         id: bt5
         anchors.top: bt4.bottom
-        iconSource: "qrc:/ui/assets/video-camera.png"
+        iconSource: "qrc:/ui/assets/film.png"
         MouseArea{
             anchors.fill: parent
             onClicked:{
@@ -100,7 +93,7 @@ Item {
     ChooseModeButton{
         id: bt6
         anchors.top: bt5.bottom
-        iconSource: "qrc:/ui/assets/viber.png"
+        iconSource: "qrc:/ui/assets/map.png"
         MouseArea{
             anchors.fill: parent
             onClicked:{

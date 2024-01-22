@@ -16,15 +16,31 @@ Rectangle {
     color: appParams.app_Color
     LeftItems{
         id: leftScreen
+        anchors{
+            top: parent.top
+            bottom: bottomScreen.top
+            left: parent.left
+            margins: marginMedium
+        }
     }
     RightItems{
         id: rightScreen
+        anchors{
+            top: parent.top
+            bottom: bottomScreen.top
+            right: parent.right
+            margins: parent.height/30
+        }
     }
+    BottomItems{
+        id: bottomScreen
+    }
+
     CenterItems{
         id: centerScreen
         anchors{
             top: parent.top
-            bottom: parent.bottom
+            bottom: bottomScreen.top
             right: rightScreen.left
             left: leftScreen.right
             margins: parent.height/30

@@ -124,7 +124,7 @@ Rectangle {
 
             Popup{
                 id: musicListPopup
-                x: -music.width/2
+                x: -music.width/5
                 y: -music.height*4/5
                 width: music.width/2
                 height: music.height*3/4
@@ -304,8 +304,9 @@ Rectangle {
                                     bottom: parent.bottom
                                 }
                                 width: parent.width*5/6
-                                color: Qt.lighter(appParams.app_Color, 1.5)
+                                color: pressArea.pressed ? Qt.lighter(appParams.app_Color, 1.2) : Qt.lighter(appParams.app_Color, 1.5)
                                 MouseArea{
+                                    id: pressArea
                                     anchors.fill: parent
                                     onClicked: {
                                         music.songName = musicName
@@ -337,7 +338,7 @@ Rectangle {
                                     bottom: parent.bottom
                                 }
                                 width: parent.width/6
-                                color: Qt.lighter(appParams.app_Color, 1.8)
+                                color: pressArea.pressed ? Qt.lighter(appParams.app_Color, 1.5) : Qt.lighter(appParams.app_Color, 1.8)
                                 Text{
                                     anchors.centerIn: parent
                                     text: ((duringTime/60<10) ? ("0"+parseInt(duringTime/60)) : parseInt(duringTime/60)) + ":" +
@@ -355,6 +356,7 @@ Rectangle {
                         anchors.fill: parent
                         focus: true
                         spacing: 5
+                        clip: true
                     }
                 }
             }

@@ -2,7 +2,7 @@
 
 App_Params::App_Params(QObject *parent)
     : QObject{parent}
-    , m_app_Color{"#8b008b"}
+    , m_app_Color{"#cd5c5c"}
     , m_mode1{true}
     , m_mode2{false}
     , m_mode3{false}

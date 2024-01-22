@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQml 2.0
 Rectangle{
+    id: root_
     anchors{
         right: parent.right
         top: parent.top
@@ -8,6 +9,31 @@ Rectangle{
     }
     height: parent.height/2.2
     color: Qt.lighter(appParams.app_Color, 1.8)
+
+    function weatherChanging(expression){
+        switch (expression){
+        case 1:
+            weatherImg.imgSource = "qrc:/ui/assets/weather/cloudywithrain.png";
+            break;
+        case 2:
+            weatherImg.imgSource = "qrc:/ui/assets/weather/snow.png";
+            break;
+        case 3:
+            weatherImg.imgSource = "qrc:/ui/assets/weather/cloud.png";
+            break;
+        case 4:
+            weatherImg.imgSource = "qrc:/ui/assets/weather/raining.png";
+            break;
+        case 5:
+            weatherImg.imgSource = "qrc:/ui/assets/weather/sun.png";
+            break;
+        case 6:
+            weatherImg.imgSource = "qrc:/ui/assets/weather/cloudy.png";
+            break;
+        default:
+            weatherImg.imgSource = "qrc:/ui/assets/weather/storm.png";
+        }
+    }
     Rectangle{
         id: divider1
         height: 2
@@ -22,6 +48,7 @@ Rectangle{
     }
     Image{
         id: weatherImg
+        property alias imgSource: weatherImg.source
         height: parent.height/3
         width: parent.width/3
         anchors{
@@ -30,7 +57,7 @@ Rectangle{
             margins: parent.width/10
         }
         fillMode: Image.PreserveAspectFit
-        source: "qrc:/ui/assets/weather/cloudywithrain.png"
+//        source: "qrc:/ui/assets/weather/cloudywithrain.png"   // must be binding property to a function, if give it a value it become asignment and binding will stop
     }
     Rectangle{
         id: temperture
@@ -64,7 +91,7 @@ Rectangle{
     }
 
     Rectangle{
-        id: date
+        id: dateArea
         property date currentDate: new Date()
         height: parent.height/8
         width: parent*2/3
@@ -75,30 +102,50 @@ Rectangle{
         }
         color:"transparent"
         Text {
+            id: dateText
+            property alias content: dateText.text
             anchors.centerIn: parent
-            text: new Date().toLocaleDateString()
             font.pixelSize: 12
             color: Qt.darker(appParams.app_Color, 1.2)
 
         }
     }
     Rectangle{
-        id: time
-        property date currentDate: new Date()
+        id: timeArea
         height: parent.height/8
         width: parent*2/3
         anchors{
-            bottom: date.top
+            bottom: dateArea.top
             horizontalCenter: parent.horizontalCenter
             margins: parent.width/20
         }
         color:"transparent"
         Text {
+            id: timeText
+            property alias content: timeText.text
             anchors.centerIn: parent
-            text: new Date().toLocaleTimeString(Qt.locale("de_DE"))
-            font.pixelSize: 28
+            font.pixelSize: 34
             color: Qt.darker(appParams.app_Color, 1.2)
 
+        }       
+    }
+    Timer{
+        id: updateClock
+        property int countForWeatherChange: 1
+        interval: 1000
+        repeat: true
+        running: true
+        triggeredOnStart: true
+        onTriggered:{
+            timeText.content = new Date().toLocaleTimeString(Qt.locale(), Locale.LongFormat);
+            dateText.content = new Date().toLocaleDateString();
+            if (updateClock.countForWeatherChange>7){
+                updateClock.countForWeatherChange=1;
+            }
+
+            console.log(updateClock.countForWeatherChange);
+            root_.weatherChanging(updateClock.countForWeatherChange);
+            updateClock.countForWeatherChange++;
         }
     }
 

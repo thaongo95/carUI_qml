@@ -31,7 +31,7 @@ Rectangle {
         Row{
             anchors.fill: parent
             anchors.bottomMargin: parent.width/6
-            spacing: parent.width/8
+            spacing: parent.width/9
 
             Column{
                 spacing: 10
